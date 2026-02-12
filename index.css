@@ -1,0 +1,125 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    width: 350px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.message h1 {
+    font-size: 2.5em;
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+.message p {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+
+#revealMessageBtn {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#revealMessageBtn:hover {
+    background-color: #f50057;
+}
+/* Animation xuất hiện lời chúc */
+.revealed p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.heart-container {
+    position: absolute;
+    bottom: 100px; /* Đặt trái tim gần đáy */
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+    display: flex;
+    justify-content: space-around; /* Căn giữa với khoảng cách đều nhau */
+    width: 100%;
+}
+
+.heart {
+    font-size: 50px; /* Kích thước trái tim lớn */
+    color: #ff4081;
+    animation: float 4s infinite ease-in-out;
+    margin: 10px; /* Khoảng cách giữa các trái tim */
+}
+
+.heart.small {
+    font-size: 30px; /* Kích thước trái tim nhỏ hơn */
+    animation-duration: 6s;
+}
+
+.heart.large {
+    font-size: 70px; /* Kích thước trái tim lớn hơn */
+    animation-duration: 3s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
